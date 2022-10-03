@@ -8,8 +8,8 @@
     </div>
 
 
-    <section class=container>
-        <table class="table table-hover"  style="margin-top:60px;">
+    <section class="container">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -22,8 +22,8 @@
                     <td>{{ cafeterium.nombre }}</td>
                     <td>{{ cafeterium.parque }}</td>
                     <td>
-                        <a class="btn" style="background-color:rgb(156, 127, 92, 0.60);color: white;" href="{{ path('app_cafeteria_show', {'id': cafeterium.id}) }}">Mostrar</a>
-                        <a class="btn" style="background-color:rgb(156, 127, 92, 0.60);color: white;" href="{{ path('app_cafeteria_edit', {'id': cafeterium.id}) }}">Editar</a>
+                        <a class="btn botoncito"  href="{{ path('app_cafeteria_show', {'id': cafeterium.id}) }}">Mostrar</a>
+                        <a class="btn botoncito"  href="{{ path('app_cafeteria_edit', {'id': cafeterium.id}) }}">Editar</a>
                     </td>
                 </tr>
             {% else %}
@@ -34,6 +34,6 @@
             </tbody>
         </table>
 
-        <a href="{{ path('app_cafeteria_new') }}" class="btn" style="background-color:rgb(156, 127, 92);color: white;">Crear nueva☕</a>
+        <a href="{{ path('app_cafeteria_new') }}" class="btn botonazo" >Crear nueva☕</a>
     <section>
     {% endblock %}
