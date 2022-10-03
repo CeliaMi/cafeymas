@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cafeteria index{% endblock %}
+
+{% block body %}
+    <div style="background-image: url('https://images.unsplash.com/photo-1610339452155-c37e0a2d799b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'); height: 600px; background-size: cover;">
+        <h1 class="frase">¿Te apetece un café?</h1>
+    </div>
+
+
+    <section class=container>
+        <table class="table table-hover"  style="margin-top:60px;">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Zona verde</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for cafeterium in cafeterias %}
+                <tr>
+                    <td>{{ cafeterium.nombre }}</td>
+                    <td>{{ cafeterium.parque }}</td>
+                    <td>
+                        <a class="btn" style="background-color:rgb(156, 127, 92, 0.60);color: white;" href="{{ path('app_cafeteria_show', {'id': cafeterium.id}) }}">Mostrar</a>
+                        <a class="btn" style="background-color:rgb(156, 127, 92, 0.60);color: white;" href="{{ path('app_cafeteria_edit', {'id': cafeterium.id}) }}">Editar</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_cafeteria_new') }}" class="btn" style="background-color:rgb(156, 127, 92);color: white;">Crear nueva☕</a>
+    <section>
+    {% endblock %}

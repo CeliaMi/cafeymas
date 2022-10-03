@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cafeteria{% endblock %}
+
+{% block body %}
+    <h1>Cafeteria</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ cafeterium.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ cafeterium.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ cafeterium.direccion }}</td>
+            </tr>
+            <tr>
+                <th>Precio café</th>
+                <td>{{ cafeterium.precioCafeConLeche }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn" style="background-color:rgb(156, 127, 92);color: white;" href="{{ path('app_cafeteria_index') }}">volver</a>
+
+    <a class="btn" style="background-color:rgb(156, 127, 92);color: white;" href="{{ path('app_cafeteria_edit', {'id': cafeterium.id}) }}">editar</a>
+
+    <a{{ include('cafeteria/_delete_form.html.twig') }}
+{% endblock %}

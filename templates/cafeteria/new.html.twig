@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Cafeteria{% endblock %}
+
+{% block body %}
+    <h3>Añade una nueva cafeteria...</h3>
+
+    {{ include('cafeteria/_form.html.twig') }}
+
+    <a class="btn" style="background-color:rgb(156, 127, 92);color: white;" href="{{ path('app_cafeteria_index') }}">Volver</a>
+{% endblock %}
